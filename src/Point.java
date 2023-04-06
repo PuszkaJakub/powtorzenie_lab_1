@@ -1,8 +1,8 @@
 public class Point {
-    public final float x;
-    public final float y;
+    public final double x;
+    public final double y;
 
-    public Point(float x, float y) {
+    public Point(double x, double y) {
         this.x = x;
         this.y = y;
     }
