@@ -1,4 +1,4 @@
-public class Polygon {
+public class Polygon extends Shape{
     private Point[] arr;
     public Style style;
 
@@ -23,6 +23,7 @@ public class Polygon {
         this.arr = newArr;
     }
 
+    @Override
     public String toSvg(){
         String result = "<svg height=\"210\" width=\"500\">\n<line ";
         for(Point point : arr){
