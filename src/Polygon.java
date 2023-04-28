@@ -1,8 +1,10 @@
 public class Polygon {
     private Point[] arr;
+    public Style style;
 
-    public Polygon(int vertices) {
+    public Polygon(int vertices, Style style) {
         this.arr = new Point[vertices];
+        this.style = style;
     }
 
     public void setPointInArr(int index, Point point){
@@ -20,6 +22,14 @@ public class Polygon {
         for(Point point : arr){
             result += "x=\"" + point.x + "\" y=\"" + point.y + "\" ";
         }
+
+        if(style != null){
+            result += style.toSvg();
+        }
+        else{
+            result += "style=\"fill:none;stroke:black;stroke-width:1\"";
+        }
+
         result += "/>\n</svg>\n";
         return result;
     }
