@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -14,10 +16,20 @@ public class Main {
         testPolygon1.setArr(arr);
         testPolygon2.setArr(arr);
 
-        System.out.println("Z uzyciem Styla:\n");
-        System.out.println(testPolygon1.toSvg());
-        System.out.println("Bez uzycia Styla:\n");
-        System.out.println(testPolygon2.toSvg());
+//        System.out.println("Z uzyciem Styla:\n");
+//        System.out.println(testPolygon1.toSvg());
+//        System.out.println("Bez uzycia Styla:\n");
+//        System.out.println(testPolygon2.toSvg());
+
+        ArrayList<Polygon> polygons = new ArrayList<>();
+        polygons.add(testPolygon1);
+        polygons.add(testPolygon2);
+
+        SvgScene scene = new SvgScene(polygons);
+
+        String path = "C:\\Users\\puszk\\IdeaProjects\\powtorzenie_lab_1\\src\\";
+        scene.save(path);
+
 
     }
 
