@@ -8,6 +8,10 @@ public class Polygon extends Shape{
         this.style = style;
     }
 
+    public Polygon(Point[] arr) {
+        this.arr = arr;
+    }
+
     public Polygon(int vertices, Style style) {
         this.arr = new Point[vertices];
         this.style = style;

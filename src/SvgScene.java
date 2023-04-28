@@ -4,14 +4,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class SvgScene {
-    private ArrayList<Polygon> polygons;
+    private ArrayList<Shape> shapes;
 
-    public SvgScene(ArrayList<Polygon> polygons) {
-        this.polygons = polygons;
+    public SvgScene(ArrayList<Shape> shapes) {
+        this.shapes = shapes;
     }
 
-    public void addPolygon(Polygon polygon){
-        polygons.add(polygon);
+    public SvgScene() {
+        shapes = new ArrayList<Shape>();
+    }
+
+    public void addShape(Shape shape){
+        shapes.add(shape);
     }
 
     public void save(String path){
@@ -33,8 +37,8 @@ public class SvgScene {
 
             FileWriter file = new FileWriter(path);
             file.write("<!DOCTYPE html>\n<html>\n<body>\n");
-            for(Polygon polygon : polygons){
-                String line = "polygon:\n" + polygon.toSvg();
+            for(Shape shape : shapes){
+                String line = "shape:\n" + shape.toSvg();
 
                 file.write(line);
             }

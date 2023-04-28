@@ -10,6 +10,6 @@ public class Style {
     }
 
     public String toSvg(){
-        return "style=\"fill:" + fillColor + ";stroke:" + strokeColor + ";stroke-width:" + strokeWidth + "\"";
+        return "style=\"fill:" + fillColor + ";stroke:" + strokeColor + ";stroke-width:" + strokeWidth + "\"\n";
     }
 }
